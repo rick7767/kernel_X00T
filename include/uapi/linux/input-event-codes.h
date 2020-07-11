@@ -664,6 +664,9 @@
 #define BTN_TRIGGER_HAPPY40		0x2e7
 
 #ifdef CONFIG_MACH_ASUS_SDM660
+#define KEY_SARSENSOR_NEAR		0x2ea
+#define KEY_SARSENSOR_FAR		0x2eb
+
 #define KEY_TP_GESTURE_W 	0x2ec
 #define KEY_TP_GESTURE_E 	0x2ed
 #define KEY_TP_GESTURE_S 	0x2ee
@@ -727,6 +730,7 @@
 
 #define ABS_MISC		0x28
 
+#ifndef CONFIG_MACH_ASUS_SDM660
 /*
  * 0x2e is reserved and should not be used in input drivers.
  * It was used by HID as ABS_MISC+6 and userspace needs to detect if
@@ -735,6 +739,7 @@
  * the situation described above.
  */
 #define ABS_RESERVED		0x2e
+#endif
 
 #define ABS_MT_SLOT		0x2f	/* MT slot being modified */
 #define ABS_MT_TOUCH_MAJOR	0x30	/* Major axis of touching ellipse */
